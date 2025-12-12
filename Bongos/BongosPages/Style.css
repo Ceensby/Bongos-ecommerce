@@ -1,0 +1,260 @@
+/* Sayfa arka planı */
+body {
+  background-color: #e2f3e7;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+/* LOGO */
+#logo {
+  width: 95px;
+  height: 95px;
+  border-radius: 50px;
+  border: 3px solid #277827;
+  align-self: flex-end; 
+
+}
+
+/* ARAMA */
+.arama {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arama-box {
+  width: 400px;
+  height: 34px;
+  padding: 0 8px;
+  border: 2px solid #146223c3;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: forestgreen;
+}
+
+.arama-arka {
+  width: 40px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arama-buyutec {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+
+/*Promotion Area*/
+
+.promo-bar{
+  margin: 8px 20px 14px;
+  background: #fff;
+  border: 1px solid rgba(20, 98, 35, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.promo-track{
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F37199;
+}
+
+.promo-track > div{
+  padding: 10px 42px;
+}
+
+.animate-go-left{
+  animation: goLeft 60s linear infinite;
+}
+
+@keyframes goLeft{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+
+
+
+/* ✅ ANA LAYOUT: sol + orta + sağ */
+.page-layout {
+    margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+/* SOL SIDEBAR */
+.sidebar-left {
+  width: 240px;
+  height: 650px;
+  flex: 0 0 240px;
+
+  background-color: #f1fbf5;
+  border-radius: 10px;
+  padding: 16px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.sidebar-title-left {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  color: #0f4f2b;
+}
+
+/* Kategori bloğu */
+.sub-category {
+  border-bottom: 1px solid #d8ebdf;
+  padding: 6px 0;
+}
+
+.sub-category-title {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #144f2f;
+  cursor: pointer;
+}
+
+/* 2. seviye liste kapalı */
+.subcategory-list {
+  list-style: none;
+  margin: 4px 0 8px 0;
+  padding-left: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+/* Açılınca */
+.sub-category.open > .subcategory-list {
+  max-height: 800px;
+}
+
+/* 2. seviye satır */
+.subcategorywithchilds {
+  padding: 4px 0;
+}
+
+/* 2. seviye başlık */
+.sub-subcategory-title {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color:#1ab15e;
+  cursor: pointer;
+}
+
+/* 3. seviye liste kapalı */
+.subsubcat-list {
+  list-style: none;
+  margin: 4px 0 8px 0;
+  padding-left: 14px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+.subcategorywithchilds.open > .subsubcat-list {
+  max-height: 600px;
+}
+
+/* Linkler */
+.subcategory-list a,
+.subsubcat-list a {
+  display: block;
+  padding: 3px 0;
+  font-size: 14px;
+  color: #276c3d;
+  text-decoration: none;
+}
+
+.subcategory-list a:hover,
+.subsubcat-list a:hover {
+  text-decoration: underline;
+}
+
+/* ORTA */
+.main-content {
+  flex: 1;
+  min-width: 0;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+/* SAĞ SIDEBAR */
+.sidebar-right {
+  width: 240px;
+  height: 650px;
+  flex: 0 0 240px;
+
+  background-color: #fff5f2;
+  border-radius: 10px;
+  padding: 16px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+.sidebar-title-welcome{
+    text-align: center;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: #f37199;
+}
+
+.sidebar-title-right {
+    padding-bottom: 1em;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: #f37199;
+}
