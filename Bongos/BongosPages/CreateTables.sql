@@ -39,3 +39,17 @@ CREATE TABLE product_categories (
         REFERENCES categories(category_id)
         ON DELETE CASCADE
 );
+
+--CATEGORY ATTRİBUTES FOR JSONS
+
+CREATE TABLE IF NOT EXISTS category_attribute_defs (
+  category_id BIGINT NOT NULL
+    REFERENCES categories(category_id)
+    ON DELETE CASCADE,
+  attr_key TEXT NOT NULL,
+  label_tr TEXT,            -- ekranda özellik ismi yazmak için
+  data_type TEXT DEFAULT 'text',  -- text/number/boolean/select vb
+  is_required BOOLEAN NOT NULL DEFAULT FALSE,
+  sort_order INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (category_id, attr_key)
+);
