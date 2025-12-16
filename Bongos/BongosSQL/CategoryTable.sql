@@ -5,7 +5,7 @@ ON categories (parent_id, name);
 -- Makeup>Face>Subcategories
 
 -- Ana kategori (Makeup), alt kategori (Face) ve Face'e bağlı alt kategorileri 
---ON CONFLICT + RETURNING ile ekleme yaptık.
+-- ON CONFLICT + RETURNING ile ekleme yaptık.
 
 WITH
 makeup AS (
@@ -345,4 +345,3 @@ LEFT JOIN categories p ON p.category_id = c.parent_id
 ORDER BY
   parent_name,
   c.name;
-
