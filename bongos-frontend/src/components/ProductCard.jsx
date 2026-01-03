@@ -17,6 +17,7 @@ export default function ProductCard({ product }) {
   // Use global cart actions from CartContext
   const { add } = useCart();
 
+  console.log("Ürün adı:", product.name, "Resim Yolu:", product.productId, product.imageUrl);
   return (
     <Card 
       sx={{ 
@@ -43,14 +44,21 @@ export default function ProductCard({ product }) {
         <FavoriteBorderIcon fontSize="small" sx={{ color: '#f37199' }} />
       </IconButton>
 
-      <CardMedia
-        component="img"
-        height="180"
-        // Build image URL using the helper function
-        image={resolveImageUrl(product.imageUrl)} 
-        alt={product.name}
-        sx={{ objectFit: 'contain', pt: 2 }}
-      />
+
+const API_BASE_URL = "http://localhost:8080";
+
+<CardMedia
+  component="img"
+  height="180"
+  image={`${API_BASE_URL}${product.imageUrl.startsWith('/') ? '' : '/'}${product.imageUrl}`}
+  alt={product.name}
+  sx={{ objectFit: 'contain', pt: 2 }}
+  onError={(e) => {
+    console.error("Denenen URL:", e.currentTarget.src);
+    e.currentTarget.style.backgroundColor = '#f0f0f0';
+  }}
+/>
+
 
       <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
         <Typography 
